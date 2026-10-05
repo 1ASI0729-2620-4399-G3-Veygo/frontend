@@ -1,11 +1,11 @@
-<script setup></script>
+<script setup>
+/**
+ * Root component. Renders the active route, the global toast and confirmation dialog.
+ */
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <router-view/>
+  <pv-toast position="top-right"/>
+  <pv-confirm-dialog/>
 </template>
-
-<style scoped></style>
