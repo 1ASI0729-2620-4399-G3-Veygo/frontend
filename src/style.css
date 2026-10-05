@@ -1,0 +1,159 @@
+/* Veygo Web Application – global styles (Web Style Guidelines, chapter 4.1.2) */
+:root {
+    --veygo-blue: #2563eb;
+    --veygo-blue-dark: #172554;
+    --veygo-navy: #0b1b3f;
+    --veygo-surface: #f4f7fe;
+    --veygo-card: #ffffff;
+    --veygo-text: #0f172a;
+    --veygo-muted: #475569;
+    --veygo-line: #e2e8f0;
+    --veygo-green: #16a34a;
+    --veygo-radius: 16px;
+    --veygo-shadow: 0 8px 28px rgba(22, 39, 76, .08);
+    --veygo-photo-bg: linear-gradient(180deg, #eef3fd 0%, #f8fafc 100%);
+    --veygo-tint-blue: #eaf1ff;
+    --veygo-tint-blue-strong: #d6e2fb;
+    --veygo-tint-green: #eafaf0;
+    --veygo-tint-amber: #fff7e0;
+    --veygo-tint-violet: #f1ecff;
+    --veygo-tint-red: #fdecec;
+    --sidebar-width: 232px;
+    font-family: 'Geist', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    line-height: 1.5;
+    color: var(--veygo-text);
+}
+
+/* Dark theme (Profile > Preferences > Dark mode) */
+:root.veygo-dark {
+    color-scheme: dark;
+    --veygo-surface: #0b1220;
+    --veygo-card: #121c31;
+    --veygo-text: #e5e7eb;
+    --veygo-muted: #9aa7bd;
+    --veygo-line: #24324f;
+    --veygo-blue-dark: #bfdbfe;
+    --veygo-shadow: 0 8px 28px rgba(0, 0, 0, .35);
+    --veygo-photo-bg: linear-gradient(180deg, #1b2743 0%, #152036 100%);
+    --veygo-tint-blue: #172a4d;
+    --veygo-tint-blue-strong: #1e3764;
+    --veygo-tint-green: #10321f;
+    --veygo-tint-amber: #3a2c0c;
+    --veygo-tint-violet: #2a1f4a;
+    --veygo-tint-red: #3b1616;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--veygo-surface);
+    color: var(--veygo-text);
+    font-family: inherit;
+}
+
+#app {
+    min-height: 100vh;
+}
+
+a {
+    color: var(--veygo-blue);
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+    color: var(--veygo-text);
+    letter-spacing: -0.01em;
+}
+
+p {
+    margin: 0;
+}
+
+/* Visible keyboard focus (accessibility) */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Surfaces */
+.veygo-card {
+    background: var(--veygo-card);
+    border-radius: var(--veygo-radius);
+    box-shadow: var(--veygo-shadow);
+    padding: 1.25rem;
+}
+
+.veygo-card-title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.veygo-card-title .pi {
+    color: var(--veygo-blue);
+}
+
+.text-muted {
+    color: var(--veygo-muted);
+}
+
+.price {
+    color: var(--veygo-blue);
+    font-weight: 700;
+}
+
+/* Responsive helpers */
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+@media (max-width: 575px) {
+    .veygo-card {
+        padding: 1rem;
+    }
+}
+
+/* Leaflet markers built with divIcon */
+.vehicle-marker {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    background: var(--veygo-blue);
+    color: #fff;
+    border-radius: 999px;
+    font: 600 12px/1 'Geist', sans-serif;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, .35);
+    border: 2px solid #fff;
+}
+
+.leaflet-container {
+    font-family: inherit;
+    border-radius: var(--veygo-radius);
+}
