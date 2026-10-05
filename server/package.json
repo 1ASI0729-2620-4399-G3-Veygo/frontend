@@ -1,0 +1,12 @@
+{
+  "name": "veygo-fake-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Fake RESTful API (json-server) used by the Veygo Web Application during Sprint 2.",
+  "scripts": {
+    "start": "json-server db.json --routes routes.json --host 0.0.0.0 --port ${PORT:-3000}"
+  },
+  "dependencies": {
+    "json-server": "0.17.4"
+  }
+}
