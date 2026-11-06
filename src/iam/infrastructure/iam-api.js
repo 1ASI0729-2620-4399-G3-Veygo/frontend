@@ -1,7 +1,10 @@
 import {BaseApi} from '@/shared/infrastructure/base-api.js';
 import {BaseEndpoint} from '@/shared/infrastructure/base-endpoint.js';
 
+// Users still live in the Fake API until the IAM bounded context is implemented in the backend.
+const iamApiUrl = import.meta.env.VITE_IAM_API_URL;
 const usersEndpointPath = import.meta.env.VITE_USERS_ENDPOINT_PATH;
+
 
 /**
  * RESTful API client for the Identity and Access Management (IAM) bounded context.
@@ -16,7 +19,7 @@ export class IamApi extends BaseApi {
     #usersEndpoint;
 
     constructor() {
-        super();
+        super(iamApiUrl);
         this.#usersEndpoint = new BaseEndpoint(this, usersEndpointPath);
     }
 

@@ -16,10 +16,12 @@ export class BaseApi {
 
     /**
      * Creates a new BaseApi instance.
+     *
+     * @param {string} [baseUrl] - Base URL of the API (defaults to VITE_VEYGO_API_URL).
      */
-    constructor() {
+    constructor(baseUrl = veygoApiUrl) {
         this.#http = axios.create({
-            baseURL: veygoApiUrl,
+            baseURL: baseUrl,
             headers: {'Content-Type': 'application/json'}
         });
         this.#http.interceptors.response.use(errorInterceptor.onResponse, errorInterceptor.onError);
