@@ -27,8 +27,7 @@ export const errorInterceptor = {
 
         if (error.response) {
             console.error('Status:', error.response.status, 'Data:', error.response.data);
-            message = error.response.data?.message || `Error ${error.response.status}: ${error.response.statusText}`;
-        } else if (error.request) {
+            message = error.response.data?.detail || error.response.data?.message || `Error ${error.response.status}: ${error.response.statusText}`;        } else if (error.request) {
             console.error('Request:', error.request);
             message = 'The Veygo service is not responding. Please try again later.';
         } else {
